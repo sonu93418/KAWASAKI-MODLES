@@ -149,7 +149,7 @@ function App() {
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.4 }}
-                      className="grid grid-cols-2 lg:grid-cols-3 gap-5 relative z-40"
+                      className="grid grid-cols-2 lg:grid-cols-3 gap-6 relative z-40"
                     >
                       {/* Engine */}
                       <motion.div 
@@ -157,20 +157,27 @@ function App() {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-br from-kawasaki-gray-800/80 to-kawasaki-gray-900/80 rounded-xl p-5 border border-kawasaki-green/30 hover:border-kawasaki-green/70 transition-all duration-300 backdrop-blur-sm"
+                        className="relative overflow-hidden rounded-2xl cursor-pointer"
                         whileHover={{ 
                           scale: 1.08, 
-                          y: -8,
-                          boxShadow: '0 20px 40px rgba(0, 255, 65, 0.3)'
+                          y: -12,
+                          rotateY: 5,
+                          rotateX: -5,
                         }}
+                        style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
                       >
-                        <div className="flex items-center gap-2 mb-3">
-                          <svg className="w-5 h-5 text-kawasaki-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                          </svg>
-                          <h4 className="text-kawasaki-green font-bold text-xs uppercase tracking-wider">Engine</h4>
+                        <div className="absolute inset-0 bg-gradient-to-br from-kawasaki-green/20 to-green-600/20 backdrop-blur-xl" />
+                        <div className="relative bg-black/70 backdrop-blur-md rounded-2xl p-6 border-2 border-kawasaki-green/40 hover:border-kawasaki-green transition-all duration-300 shadow-2xl hover:shadow-kawasaki-green/50">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 bg-kawasaki-green/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-6 h-6 text-kawasaki-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                            </div>
+                            <h4 className="text-kawasaki-green font-black text-sm uppercase tracking-widest">Engine</h4>
+                          </div>
+                          <p className="text-white font-bold text-base leading-relaxed bg-black/40 px-3 py-2 rounded-lg">{bike.engine}</p>
                         </div>
-                        <p className="text-white font-semibold text-sm leading-tight">{bike.engine}</p>
                       </motion.div>
 
                       {/* Power */}
@@ -179,20 +186,28 @@ function App() {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-br from-kawasaki-gray-800/80 to-kawasaki-gray-900/80 rounded-xl p-5 border border-red-500/30 hover:border-red-500/70 transition-all duration-300 backdrop-blur-sm"
+                        className="relative overflow-hidden rounded-2xl cursor-pointer"
                         whileHover={{ 
-                          scale: 1.08, 
-                          y: -8,
-                          boxShadow: '0 20px 40px rgba(239, 68, 68, 0.3)'
+                          scale: 1.04, 
+                          y: -6,
+                          rotateY: -2,
+                          rotateX: 2,
+                          transition: { duration: 0.3, ease: "easeOut" }
                         }}
+                        style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
                       >
-                        <div className="flex items-center gap-2 mb-3">
-                          <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                          </svg>
-                          <h4 className="text-red-500 font-bold text-xs uppercase tracking-wider">Power</h4>
+                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-600/20 backdrop-blur-xl" />
+                        <div className="relative bg-black/70 backdrop-blur-md rounded-2xl p-6 border-2 border-red-500/40 hover:border-red-500 transition-all duration-300 shadow-2xl hover:shadow-red-500/40">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                              </svg>
+                            </div>
+                            <h4 className="text-red-500 font-black text-sm uppercase tracking-widest">Power</h4>
+                          </div>
+                          <p className="text-white font-bold text-base leading-relaxed bg-black/40 px-3 py-2 rounded-lg">{bike.power}</p>
                         </div>
-                        <p className="text-white font-semibold text-sm leading-tight">{bike.power}</p>
                       </motion.div>
 
                       {/* Torque */}
@@ -201,20 +216,27 @@ function App() {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.7 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-br from-kawasaki-gray-800/80 to-kawasaki-gray-900/80 rounded-xl p-5 border border-blue-500/30 hover:border-blue-500/70 transition-all duration-300 backdrop-blur-sm"
+                        className="relative overflow-hidden rounded-2xl cursor-pointer"
                         whileHover={{ 
                           scale: 1.08, 
-                          y: -8,
-                          boxShadow: '0 20px 40px rgba(59, 130, 246, 0.3)'
+                          y: -12,
+                          rotateY: 5,
+                          rotateX: 5,
                         }}
+                        style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
                       >
-                        <div className="flex items-center gap-2 mb-3">
-                          <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                          </svg>
-                          <h4 className="text-blue-500 font-bold text-xs uppercase tracking-wider">Torque</h4>
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-600/20 backdrop-blur-xl" />
+                        <div className="relative bg-black/70 backdrop-blur-md rounded-2xl p-6 border-2 border-blue-500/40 hover:border-blue-500 transition-all duration-300 shadow-2xl hover:shadow-blue-500/50">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                              </svg>
+                            </div>
+                            <h4 className="text-blue-500 font-black text-sm uppercase tracking-widest">Torque</h4>
+                          </div>
+                          <p className="text-white font-bold text-base leading-relaxed bg-black/40 px-3 py-2 rounded-lg">{bike.torque}</p>
                         </div>
-                        <p className="text-white font-semibold text-sm leading-tight">{bike.torque}</p>
                       </motion.div>
 
                       {/* ABS Brakes */}
@@ -223,20 +245,27 @@ function App() {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.8 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-br from-kawasaki-gray-800/80 to-kawasaki-gray-900/80 rounded-xl p-5 border border-yellow-500/30 hover:border-yellow-500/70 transition-all duration-300 backdrop-blur-sm"
+                        className="relative overflow-hidden rounded-2xl cursor-pointer"
                         whileHover={{ 
                           scale: 1.08, 
-                          y: -8,
-                          boxShadow: '0 20px 40px rgba(234, 179, 8, 0.3)'
+                          y: -12,
+                          rotateY: -5,
+                          rotateX: -5,
                         }}
+                        style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
                       >
-                        <div className="flex items-center gap-2 mb-3">
-                          <svg className="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                          </svg>
-                          <h4 className="text-yellow-500 font-bold text-xs uppercase tracking-wider">ABS Brakes</h4>
+                        <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-amber-600/20 backdrop-blur-xl" />
+                        <div className="relative bg-black/70 backdrop-blur-md rounded-2xl p-6 border-2 border-yellow-500/40 hover:border-yellow-500 transition-all duration-300 shadow-2xl hover:shadow-yellow-500/50">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                              </svg>
+                            </div>
+                            <h4 className="text-yellow-500 font-black text-sm uppercase tracking-widest">Brakes</h4>
+                          </div>
+                          <p className="text-white font-bold text-base leading-relaxed bg-black/40 px-3 py-2 rounded-lg">{bike.brakes}</p>
                         </div>
-                        <p className="text-white font-semibold text-sm leading-tight">{bike.brakes}</p>
                       </motion.div>
 
                       {/* Top Speed */}
@@ -245,20 +274,27 @@ function App() {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.9 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-br from-kawasaki-gray-800/80 to-kawasaki-gray-900/80 rounded-xl p-5 border border-purple-500/30 hover:border-purple-500/70 transition-all duration-300 backdrop-blur-sm"
+                        className="relative overflow-hidden rounded-2xl cursor-pointer"
                         whileHover={{ 
                           scale: 1.08, 
-                          y: -8,
-                          boxShadow: '0 20px 40px rgba(168, 85, 247, 0.3)'
+                          y: -12,
+                          rotateY: 5,
+                          rotateX: -5,
                         }}
+                        style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
                       >
-                        <div className="flex items-center gap-2 mb-3">
-                          <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                          </svg>
-                          <h4 className="text-purple-500 font-bold text-xs uppercase tracking-wider">Top Speed</h4>
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-xl" />
+                        <div className="relative bg-black/70 backdrop-blur-md rounded-2xl p-6 border-2 border-purple-500/40 hover:border-purple-500 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                              </svg>
+                            </div>
+                            <h4 className="text-purple-500 font-black text-sm uppercase tracking-widest">Top Speed</h4>
+                          </div>
+                          <p className="text-white font-bold text-base leading-relaxed bg-black/40 px-3 py-2 rounded-lg">{bike.topSpeed}</p>
                         </div>
-                        <p className="text-white font-semibold text-sm leading-tight">{bike.topSpeed}</p>
                       </motion.div>
 
                       {/* Weight */}
@@ -267,20 +303,27 @@ function App() {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 1.0 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-br from-kawasaki-gray-800/80 to-kawasaki-gray-900/80 rounded-xl p-5 border border-orange-500/30 hover:border-orange-500/70 transition-all duration-300 backdrop-blur-sm"
+                        className="relative overflow-hidden rounded-2xl cursor-pointer"
                         whileHover={{ 
                           scale: 1.08, 
-                          y: -8,
-                          boxShadow: '0 20px 40px rgba(249, 115, 22, 0.3)'
+                          y: -12,
+                          rotateY: -5,
+                          rotateX: 5,
                         }}
+                        style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
                       >
-                        <div className="flex items-center gap-2 mb-3">
-                          <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                          </svg>
-                          <h4 className="text-orange-500 font-bold text-xs uppercase tracking-wider">Weight</h4>
+                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 backdrop-blur-xl" />
+                        <div className="relative bg-black/70 backdrop-blur-md rounded-2xl p-6 border-2 border-orange-500/40 hover:border-orange-500 transition-all duration-300 shadow-2xl hover:shadow-orange-500/50">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                              </svg>
+                            </div>
+                            <h4 className="text-orange-500 font-black text-sm uppercase tracking-widest">Weight</h4>
+                          </div>
+                          <p className="text-white font-bold text-base leading-relaxed bg-black/40 px-3 py-2 rounded-lg">{bike.weight}</p>
                         </div>
-                        <p className="text-white font-semibold text-sm leading-tight">{bike.weight}</p>
                       </motion.div>
                     </motion.div>
                     
