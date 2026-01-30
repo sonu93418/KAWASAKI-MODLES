@@ -422,7 +422,7 @@ Built with amazing open-source technologies:
 
 ---
 
-![Motorcycle Ride](public/images/motorcycle-animated-sticker.svg)
+![Motorcycle Ride](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif)
 
 ## Built with ❤️ for the motorcycle community
 
