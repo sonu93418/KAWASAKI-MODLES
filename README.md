@@ -422,7 +422,10 @@ Built with amazing open-source technologies:
 
 ---
 
-![Motorcycle Ride](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif)
+<div align="center">
+  <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Animated Heart" width="120"/>
+  <h2 style="color:#00FF41;">Thank you! ❤️</h2>
+</div>
 
 ## Built with ❤️ for the motorcycle community
 
