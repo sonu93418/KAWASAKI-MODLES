@@ -22,7 +22,6 @@ export default function InteractiveHeroSection() {
   const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
   const [particles, setParticles] = useState<Particle[]>([])
-  const [currentTime, setCurrentTime] = useState(0)
   
   // Motion values for smooth cursor tracking
   const mouseX = useMotionValue(0)
@@ -34,14 +33,8 @@ export default function InteractiveHeroSection() {
   const y = useSpring(mouseY, springConfig)
   
   // Transform cursor position to rotation and parallax values
-  const rotateX = useTransform(y, [-0.5, 0.5], [15, -15])
-  const rotateY = useTransform(x, [-0.5, 0.5], [-15, 15])
   const parallaxX = useTransform(x, [-0.5, 0.5], [-50, 50])
   const parallaxY = useTransform(y, [-0.5, 0.5], [-30, 30])
-  
-  // Background gradient transforms
-  const gradientRotate = useTransform(x, [-0.5, 0.5], [45, 135])
-  const gradientIntensity = useTransform(x, [-0.5, 0.5], [0.3, 0.8])
 
   // Initialize simplified particle system
   const initializeParticles = useCallback(() => {
@@ -61,7 +54,6 @@ export default function InteractiveHeroSection() {
   }, [])
 
   // Advanced mouse tracking with velocity
-  const [mouseVelocity, setMouseVelocity] = useState({ x: 0, y: 0 })
   const previousMousePos = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -78,10 +70,6 @@ export default function InteractiveHeroSection() {
       const normalizedY = (e.clientY - centerY) / (rect.height / 2)
       
       // Calculate velocity
-      const velocityX = normalizedX - previousMousePos.current.x
-      const velocityY = normalizedY - previousMousePos.current.y
-      setMouseVelocity({ x: velocityX * 10, y: velocityY * 10 })
-      
       previousMousePos.current = { x: normalizedX, y: normalizedY }
       setMousePosition({ x: normalizedX, y: normalizedY })
       mouseX.set(normalizedX)
@@ -89,7 +77,6 @@ export default function InteractiveHeroSection() {
     }
 
     const updateParticles = () => {
-      setCurrentTime(prev => prev + 0.016)
       animationFrame = requestAnimationFrame(updateParticles)
     }
 
@@ -260,7 +247,7 @@ export default function InteractiveHeroSection() {
                 { value: '203', unit: 'HP', label: 'Power' },
                 { value: '5', unit: '', label: 'Models' },
                 { value: '50+', unit: '', label: 'Years' }
-              ].map((stat, index) => (
+              ].map((stat, _index) => (
                 <motion.div
                   key={stat.label}
                   whileHover={{ scale: 1.05, translateZ: 20, rotateY: 10 }}

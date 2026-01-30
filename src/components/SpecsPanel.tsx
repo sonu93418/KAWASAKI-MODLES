@@ -151,7 +151,7 @@ export default function SpecsPanel({ selectedModel }: SpecsPanelProps) {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12"
         >
-          {specs.map((spec, index) => (
+          {specs.map((spec, _index) => (
             <motion.div
               key={spec.label}
               variants={cardVariants}

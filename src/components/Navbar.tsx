@@ -37,14 +37,6 @@ export default function Navbar() {
       icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
     }
   ]
-  
-  const bikeModels = [
-    { name: 'Ninja 300', href: '#ninja-300' },
-    { name: 'Ninja 400', href: '#ninja-400' },
-    { name: 'Ninja 650', href: '#ninja-650' },
-    { name: 'ZX-6R', href: '#ninja-zx6r' },
-    { name: 'ZX-10R', href: '#ninja-zx10r' }
-  ]
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 

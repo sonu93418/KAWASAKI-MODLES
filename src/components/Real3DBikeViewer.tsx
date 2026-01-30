@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, useAnimation } from 'framer-motion'
 
 interface Real3DBikeViewerProps {
@@ -7,9 +7,9 @@ interface Real3DBikeViewerProps {
 }
 
 // Heavy 3D bike viewer: multiple depth layers, scanning beams, particle bursts, and interactive tilt.
-export default function Real3DBikeViewer({ mousePosition, isLoaded }: Real3DBikeViewerProps) {
+export default function Real3DBikeViewer({ mousePosition, isLoaded: _isLoaded }: Real3DBikeViewerProps) {
   const containerRef = useRef<HTMLDivElement | null>(null)
-  const [imageLoaded, setImageLoaded] = useState(false)
+
 
   // Motion values for mouse-driven parallax
   const mouseX = useMotionValue(0)
@@ -24,14 +24,8 @@ export default function Real3DBikeViewer({ mousePosition, isLoaded }: Real3DBike
   const rotateZ = useTransform(x, [-0.6, 0.6], [-6, 6])
   const scale = useTransform(x, [-0.6, 0.6], [0.92, 1.18])
 
-  // Depth parallax
-  const depth1 = useTransform(x, [-0.6, 0.6], [-40, 40])
-  const depth2 = useTransform(x, [-0.6, 0.6], [-20, 20])
-  const depthY = useTransform(y, [-0.6, 0.6], [-20, 20])
-
   // Animation controls for entrance/idle
   const controls = useAnimation()
-  const [animationsReady, setAnimationsReady] = useState(false)
 
   useEffect(() => {
     mouseX.set(mousePosition.x)
