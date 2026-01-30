@@ -413,7 +413,7 @@ Built with amazing open-source technologies:
 
 ## 📞 Support
 
-- 📧 Email: support@example.com
+- 📧 Email: sonukumarray1009@gmail.com
 - 🐛 Issues: [GitHub Issues](https://github.com/sonu93418/KAWASAKI-MODLES/issues)
 - 💬 Discussions: [GitHub Discussions](https://github.com/sonu93418/KAWASAKI-MODLES/discussions)
 
