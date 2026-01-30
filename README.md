@@ -422,7 +422,7 @@ Built with amazing open-source technologies:
 
 ---
 
-![Motorcycle Ride](https://raw.githubusercontent.com/sonu93418/KAWASAKI-MODLES/main/public/images/motorcycle-animated-sticker.svg)
+![Motorcycle Ride](public/images/motorcycle-animated-sticker.svg)
 
 ## Built with ❤️ for the motorcycle community
 
