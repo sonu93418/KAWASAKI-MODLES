@@ -1,19 +1,9 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
 interface MousePosition {
   x: number
   y: number
-}
-
-interface Particle {
-  id: number
-  x: number
-  y: number
-  size: number
-  speed: number
-  color: string
-  opacity: number
 }
 
 export default function InteractiveHeroSection() {
@@ -21,7 +11,6 @@ export default function InteractiveHeroSection() {
   const viewerRef = useRef<HTMLDivElement>(null)
   const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
-  const [particles, setParticles] = useState<Particle[]>([])
   
   // Motion values for smooth cursor tracking
   const mouseX = useMotionValue(0)
@@ -36,28 +25,10 @@ export default function InteractiveHeroSection() {
   const parallaxX = useTransform(x, [-0.5, 0.5], [-50, 50])
   const parallaxY = useTransform(y, [-0.5, 0.5], [-30, 30])
 
-  // Initialize simplified particle system
-  const initializeParticles = useCallback(() => {
-    const newParticles: Particle[] = []
-    for (let i = 0; i < 12; i++) {
-      newParticles.push({
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size: Math.random() * 1.5 + 0.3,
-        speed: Math.random() * 0.2 + 0.03,
-        color: '#6366f1',
-        opacity: Math.random() * 0.3 + 0.05
-      })
-    }
-    setParticles(newParticles)
-  }, [])
-
   // Advanced mouse tracking with velocity
   const previousMousePos = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
-    let animationFrame: number
     
     const handleMouseMove = (e: MouseEvent) => {
       if (!heroRef.current) return
@@ -76,22 +47,15 @@ export default function InteractiveHeroSection() {
       mouseY.set(normalizedY)
     }
 
-    const updateParticles = () => {
-      animationFrame = requestAnimationFrame(updateParticles)
-    }
-
     window.addEventListener('mousemove', handleMouseMove)
-    initializeParticles()
-    updateParticles()
     
     // Start animations immediately
     setIsLoaded(true)
     
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
-      cancelAnimationFrame(animationFrame)
     }
-  }, [mouseX, mouseY, initializeParticles])
+  }, [mouseX, mouseY])
 
   // Specs floating cards data
   const specs = [

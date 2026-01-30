@@ -1,21 +1,19 @@
-import { useRef, useEffect, useState, Suspense, useMemo } from 'react'
+import { useRef, useEffect, useState, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import * as THREE from 'three'
 import { 
   OrbitControls, 
   Environment, 
-  ContactShadows, 
   PresentationControls,
   Stage
 } from '@react-three/drei'
-import * as THREE from 'three'
 import { gsapAnimations } from '../animations/gsapAnimations'
-import { PERFORMANCE_CONFIG, PerformanceUtils } from '../utils/performanceConfig'
 import { BikeModel } from '../data/bikeModels'
 
-interface BikeModelProps {
-  selectedModel: BikeModel
-  onModelLoad?: (model: THREE.Group) => void
-}
+// interface BikeModelProps {
+//   selectedModel: BikeModel
+//   onModelLoad?: (model: THREE.Group) => void
+// }
 
 function PlaceholderBike() {
   const bikeRef = useRef<THREE.Group>(null)

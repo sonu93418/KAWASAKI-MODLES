@@ -1,8 +1,5 @@
 import { motion } from 'framer-motion'
-import BikeViewer3D from './BikeViewer3D'
-import SimpleBikeViewer from './SimpleBikeViewer'
-import Moving3DBikes from './Moving3DBikes'
-import { BikeModel, bikeModels } from '../data/bikeModels'
+import { bikeModels } from '../data/bikeModels'
 
 export default function HeroSection() {
   // Use the top-tier model for hero display

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, useAnimation } from 'framer-motion'
 
 interface Real3DBikeViewerProps {
@@ -48,8 +48,6 @@ export default function Real3DBikeViewer({ mousePosition, isLoaded: _isLoaded }:
         rotateZ: [0, 1.2, 0, -1.2, 0],
         transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
       })
-      
-      setAnimationsReady(true)
     }
     
     // Start animations immediately, don't wait for isLoaded
@@ -151,7 +149,6 @@ export default function Real3DBikeViewer({ mousePosition, isLoaded: _isLoaded }:
             alt="Kawasaki H2"
             className="w-full h-auto object-contain"
             style={{ maxHeight: 640, filter: 'contrast(1.15) saturate(1.25) drop-shadow(0 30px 60px rgba(0,255,70,0.35))' }}
-            onLoad={() => setImageLoaded(true)}
           />
         </motion.div>
 
