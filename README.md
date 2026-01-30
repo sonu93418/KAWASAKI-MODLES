@@ -17,13 +17,25 @@
 
 [Live Demo](#) • [Report Bug](https://github.com/sonu93418/KAWASAKI-MODLES/issues) • [Request Feature](https://github.com/sonu93418/KAWASAKI-MODLES/issues)
 
----
 
+</div>
+
+<div align="center">
+  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Kawasaki Ninja Animated" width="320"/>
+</div>
+
+<div align="center">
+  <h3>🚀 <a href="https://model.sonuray.me" target="_blank">Live 3D Demo</a> | Developed by <b>Sonu Kumar Ray</b></h3>
+  <img src="https://img.shields.io/badge/sonuray.me-Visit-green?style=for-the-badge" alt="Sonu Kumar Ray"/>
 </div>
 
 ## 🌟 Overview
 
 An immersive, production-ready 3D web application showcasing Kawasaki Ninja motorcycles with cutting-edge web technologies. Features interactive 3D models, smooth animations, and a premium user interface optimized for all devices.
+
+<div align="center">
+  <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Animated Motorcycle" width="220"/>
+</div>
 
 ## ✨ Key Features
 
@@ -405,18 +417,17 @@ Built with amazing open-source technologies:
 - 🐛 Issues: [GitHub Issues](https://github.com/sonu93418/KAWASAKI-MODLES/issues)
 - 💬 Discussions: [GitHub Discussions](https://github.com/sonu93418/KAWASAKI-MODLES/discussions)
 
-## 🌟 Show Your Support
-
-If you find this project helpful, please ⭐ star the repository!
-
 ---
 
 <div align="center">
-
-**Built with ❤️ for the motorcycle community**
-
-[⬆ Back to Top](#-kawasaki-ninja-3d-showcase)
-
+  <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Ride Animated" width="180"/>
+  <h2>Built with ❤️ for the motorcycle community</h2>
+  <h3>Created by <a href="https://model.sonuray.me" target="_blank">Sonu Kumar Ray</a></h3>
+  <a href="https://model.sonuray.me" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-model.sonuray.me-green?style=for-the-badge" alt="Live Demo"/>
+  </a>
+  <br><br>
+  <b>Enjoy the ride! 🏍️</b>
+  <br>
+  <a href="#-kawasaki-ninja-3d-showcase">⬆ Back to Top</a>
 </div>
-
-**Note**: This is a showcase project. Replace placeholder 3D models with actual Kawasaki Ninja GLB/GLTF files for full functionality.# KAWASAKI-MODLES
