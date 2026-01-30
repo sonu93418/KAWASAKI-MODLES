@@ -419,15 +419,17 @@ Built with amazing open-source technologies:
 
 ---
 
-<div align="center">
-  <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Ride Animated" width="180"/>
-  <h2>Built with ❤️ for the motorcycle community</h2>
-  <h3>Created by <a href="https://model.sonuray.me" target="_blank">Sonu Kumar Ray</a></h3>
-  <a href="https://model.sonuray.me" target="_blank">
-    <img src="https://img.shields.io/badge/Live%20Demo-model.sonuray.me-green?style=for-the-badge" alt="Live Demo"/>
-  </a>
-  <br><br>
-  <b>Enjoy the ride! 🏍️</b>
-  <br>
-  <a href="#-kawasaki-ninja-3d-showcase">⬆ Back to Top</a>
-</div>
+
+---
+
+![Motorcycle Ride](https://raw.githubusercontent.com/sonu93418/KAWASAKI-MODLES/main/public/images/motorcycle-animated-sticker.svg)
+
+## Built with ❤️ for the motorcycle community
+
+### Created by [Sonu Kumar Ray](https://model.sonuray.me)
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-model.sonuray.me-green?style=for-the-badge)](https://model.sonuray.me)
+
+**Enjoy the ride! 🏍️**
+
+[⬆ Back to Top](#-kawasaki-ninja-3d-showcase)
